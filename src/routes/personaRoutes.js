@@ -17,6 +17,7 @@ router.post("/generate", async (req, res) => {
 
   try {
     const persona = await generatePersona(roleTitle, linkedinProfiles || [], industryContext || "");
+    console.log(persona,"persona from gpt");
     res.status(200).json({ success: true, persona });
   } catch (error) {
     console.error("Error generating persona:", error.message);
